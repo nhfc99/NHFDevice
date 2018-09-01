@@ -2,7 +2,7 @@
 //  NHFDevice.h
 //  NHFDevice
 //
-//  Created by 可能科技 on 2018/8/11.
+//  Created by 牛宏飞 on 2018/8/11.
 //  Copyright © 2018年 网络科技. All rights reserved.
 //
 
@@ -12,6 +12,16 @@
 #define  NH_iPhoneX (NH_ScreenWidth == 375.f && NH_ScreenHeight == 812.f ? YES : NO)
 
 @interface NHFDevice : NSObject
+
+
+/**
+ 如果使用了UIScrollViewContentInsetAdjustmentNever/automaticallyAdjustsScrollViewInsets = NO之后
+ 适配iPhoneX顶部的问题
+
+ @return -
+ */
++ (CGFloat)ScrollViewInsets;
+
 
 /**
  获取设备大小

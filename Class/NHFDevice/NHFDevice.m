@@ -2,7 +2,7 @@
 //  NHFDevice.m
 //  NHFDevice
 //
-//  Created by 可能科技 on 2018/8/11.
+//  Created by 牛宏飞 on 2018/8/11.
 //  Copyright © 2018年 网络科技. All rights reserved.
 //
 
@@ -19,6 +19,14 @@
 #define NH_ViewSafeAreInsets(view) ({UIEdgeInsets insets; if(@available(iOS 11.0, *)) {insets = view.safeAreaInsets;} else {insets = UIEdgeInsetsZero;} insets;})
 
 @implementation NHFDevice
+
++ (CGFloat)ScrollViewInsets {
+    if (NH_iPhoneX) {
+        return [NHFDevice StatusBarHeight];
+    } else {
+        return 0.f;
+    }
+}
 
 + (CGSize)ScreenSize {
     CGSize size_screen = [[UIScreen mainScreen] bounds].size;
