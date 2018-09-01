@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "NHFDevice"
-    s.version      = "1.0.0"
+    s.version      = "1.0.1"
     s.summary      = "IOS布局相关方面的"
     s.homepage     = "https://github.com/nhfc99/NHFDevice.git"
     s.license      = "MIT"
