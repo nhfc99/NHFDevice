@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+// 判断是否为iPhone X 系列  这样写消除了在Xcode10上的警告。
+#define IPHONE_X \
+({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
+
 //判断是否是iPhoneX
-#define  NH_iPhoneX (NH_ScreenWidth == 375.f && NH_ScreenHeight == 812.f ? YES : NO)
+#define  NH_iPhoneX IPHONE_X
 
 @interface NHFDevice : NSObject
 
